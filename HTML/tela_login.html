@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Aplicativo</title>
+    <link rel="stylesheet" href="../STYLE/config.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="logo">
+            <div class="icone">📱</div>
+            <h1>MeuApp</h1>
+        </div>
+
+        <div class="conteudo">
+            <h2>Bem-vindo!</h2>
+
+            <p>
+                Acesse sua conta ou cadastre-se
+                para começar.
+            </p>
+
+            <div class="botoes">
+                <button type="button" class="btn-entrar">
+                    Entrar
+                </button>
+
+                <button type="button" class="btn-cadastrar">
+                    Cadastrar
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 MeuApp</p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const entrar = document.querySelector(".btn-entrar");
+            const cadastrar = document.querySelector(".btn-cadastrar");
+
+            if (entrar) {
+                entrar.addEventListener("click", () => window.location.href = "agenda_id.html");
+            }
+
+            if (cadastrar) {
+                cadastrar.addEventListener("click", () => window.location.href = "agenda_id.html");
+            }
+        });
+    </script>
+
+</body>
+</html>

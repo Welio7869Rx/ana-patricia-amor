@@ -1,0 +1,470 @@
+:root {
+    --android-bg: #f2f4f8;
+    --android-card: #ffffff;
+    --android-primario: #3b82f6;
+    --android-primario-escuro: #2563eb;
+    --android-texto: #1f2937;
+    --android-secundario: #6b7280;
+    --android-borda: #e5e7eb;
+    --android-sucesso: #10b981;
+    --android-alerta: #f59e0b;
+    --android-vermelho: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #dfeaff 0%, var(--android-bg) 22%, #eef2f7 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 12px;
+}
+
+.agenda-container {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    background: var(--android-bg);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(31, 41, 55, 0.18);
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.android-shell {
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.android-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 18px 12px;
+    background: linear-gradient(180deg, #f8fbff 0%, #edf4ff 100%);
+    color: var(--android-texto);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.status-icons {
+    width: 70px;
+    text-align: left;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.topbar-title {
+    flex: 1;
+    text-align: center;
+    font-size: 1.06rem;
+}
+
+.topbar-actions {
+    width: 70px;
+    text-align: right;
+}
+
+.icon-btn,
+.close-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--android-texto);
+    padding: 6px;
+}
+
+.settings-panel {
+    margin: 0 16px 16px;
+    background: #fff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    padding: 14px 16px;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.settings-header h3 {
+    font-size: 1rem;
+    color: var(--android-texto);
+}
+
+.switch-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--android-texto);
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.switch-row:last-child {
+    border-bottom: none;
+}
+
+.switch-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--android-primario);
+}
+
+.android-card {
+    background: var(--android-card);
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.hero-card {
+    margin: 8px 16px 16px;
+    padding: 18px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.hero-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+    font-size: 1.8rem;
+    box-shadow: 0 12px 20px rgba(59, 130, 246, 0.24);
+}
+
+.eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--android-secundario);
+    margin-bottom: 4px;
+}
+
+.hero-card h1 {
+    font-size: 2rem;
+    color: var(--android-texto);
+    margin: 0;
+    text-align: left;
+}
+
+form {
+    margin: 0 16px 20px;
+    padding: 18px 16px 14px;
+}
+
+h2 {
+    margin: 18px 16px 10px;
+    font-size: 1.08rem;
+    color: var(--android-texto);
+    font-weight: 700;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+.input-row .input-group {
+    flex: 1;
+}
+
+.input-row-compacto {
+    flex-direction: column;
+    gap: 0;
+}
+
+label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--android-secundario);
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--android-borda);
+    border-radius: 12px;
+    background: #f9fafb;
+    color: var(--android-texto);
+    font-size: 0.96rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    border-color: var(--android-primario);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, var(--android-primario) 0%, var(--android-primario-escuro) 100%);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    opacity: 0.98;
+}
+
+.botoes-acoes-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.botoes-acoes-form button {
+    flex: 1;
+}
+
+.btn-cancelar {
+    background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+    box-shadow: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#toast-container {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    width: min(92vw, 360px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast {
+    padding: 12px 14px;
+    border-radius: 999px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+    opacity: 0;
+    transform: translateY(18px);
+    animation: toast-in 0.3s ease forwards;
+}
+
+.toast.success {
+    background: linear-gradient(135deg, var(--android-sucesso) 0%, #059669 100%);
+}
+
+.toast.error {
+    background: linear-gradient(135deg, var(--android-vermelho) 0%, #dc2626 100%);
+}
+
+@keyframes toast-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tabela-wrapper {
+    margin: 0 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #eef2f7;
+    vertical-align: top;
+}
+
+th {
+    background: #f8fafc;
+    color: var(--android-secundario);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+td {
+    background: white;
+    color: var(--android-texto);
+    font-size: 0.8rem;
+}
+
+.botoes-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-editar,
+.btn-excluir {
+    width: auto;
+    min-width: 72px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    box-shadow: none;
+}
+
+.btn-editar {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.btn-excluir {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.conteudo-compromisso {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.conteudo-compromisso strong {
+    font-size: 0.9rem;
+}
+
+.imagem-compromisso {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--android-borda);
+}
+
+.alarme-tag {
+    display: inline-flex;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #e0f2fe;
+    color: #075985;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+body.dark-mode {
+    background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+}
+
+body.dark-mode .agenda-container {
+    background: #111827;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .android-topbar,
+body.dark-mode .android-card,
+body.dark-mode .settings-panel,
+body.dark-mode .tabela-wrapper,
+body.dark-mode th,
+body.dark-mode td,
+body.dark-mode .settings-panel {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.dark-mode .hero-card,
+body.dark-mode .settings-panel,
+body.dark-mode .tabela-wrapper {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+body.dark-mode .topbar-title,
+body.dark-mode .settings-header h3,
+body.dark-mode .switch-row,
+body.dark-mode .hero-card h1,
+body.dark-mode .input-group label,
+body.dark-mode th,
+body.dark-mode td,
+body.dark-mode input,
+body.dark-mode .conteudo-compromisso strong {
+    color: #e5e7eb;
+}
+
+body.dark-mode input {
+    background: #0f172a;
+    border-color: rgba(148, 163, 184, 0.25);
+}
+
+body.dark-mode th {
+    background: #111827;
+}
+
+body.dark-mode td {
+    background: #1f2937;
+}
+
+body.dark-mode .icon-btn,
+body.dark-mode .close-btn,
+body.dark-mode .topbar-title,
+body.dark-mode .status-icons,
+body.dark-mode .topbar-actions {
+    color: #e5e7eb;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px 0;
+    }
+
+    .agenda-container {
+        min-height: 100vh;
+        border-radius: 0;
+        max-width: 100%;
+    }
+
+    .hero-card h1 {
+        font-size: 1.6rem;
+    }
+
+    .botoes-acoes-form {
+        flex-direction: column;
+    }
+}

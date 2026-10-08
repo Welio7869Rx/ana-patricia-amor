@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Agenda Web</title>
+    <link rel="stylesheet" href="../STYLE/style.css">
+</head>
+<body>
+
+    <div class="agenda-container android-shell">
+        <header class="android-topbar">
+            <div class="status-icons">
+                <span id="system-time-header">9:41</span>
+            </div>
+            <div class="topbar-title">Agenda</div>
+            <div class="topbar-actions">
+                <button type="button" id="btn-config" class="icon-btn" aria-label="Abrir configurações">⚙️</button>
+            </div>
+        </header>
+
+        <aside id="settings-panel" class="settings-panel hidden">
+            <div class="settings-header">
+                <h3>Configurações</h3>
+                <button type="button" id="btn-fechar-config" class="close-btn" aria-label="Fechar configurações">×</button>
+            </div>
+
+            <label class="switch-row">
+                <span>Notificações</span>
+                <input type="checkbox" id="toggle-notificacoes" checked>
+            </label>
+
+            <label class="switch-row">
+                <span>Vibração</span>
+                <input type="checkbox" id="toggle-vibracao" checked>
+            </label>
+
+            <label class="switch-row">
+                <span>Som do alarme</span>
+                <input type="checkbox" id="toggle-som-alarme" checked>
+            </label>
+
+            <label class="switch-row">
+                <span>Tema escuro</span>
+                <input type="checkbox" id="toggle-tema-escuro">
+            </label>
+        </aside>
+
+        <div class="android-card hero-card">
+            <div class="hero-icon">📅</div>
+            <div>
+                <p class="eyebrow">Planejamento</p>
+                <h1>Minha Agenda</h1>
+            </div>
+        </div>
+
+        <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+        
+        <!-- Formulário de Cadastro -->
+        <form id="form-agenda" class="android-card form-card">
+            <div class="input-group">
+                <label for="titulo">Compromisso:</label>
+                <input type="text" id="titulo" placeholder="Ex: Reunião de Trabalho" required>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="data">Data:</label>
+                    <input type="text" id="data" required placeholder="AAAA-MM-DD" inputmode="numeric" maxlength="10" pattern="\it d{4}-\d{2}-\d{2}">
+                </div>
+                <div class="input-group">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" required>
+                </div>
+            </div>
+
+            <div class="input-row input-row-compacto">
+                <div class="input-group">
+                    <label for="imagem">Imagem do compromisso:</label>
+                    <input type="file" id="imagem" accept="image/*" aria-label="Selecione uma imagem">
+                </div>
+                <div class="input-group">
+                    <label for="alarme">Música de alarme:</label>
+                    <input type="file" id="alarme" accept="audio/*" aria-label="Selecione um arquivo de áudio">
+                </div>
+            </div>
+
+            <div class="botoes-acoes-form">
+                <button type="submit" id="btn-salvar">Adicionar à Agenda</button>
+                <button type="button" id="btn-cancelar" class="btn-cancelar hidden">Cancelar Edição</button>
+            </div>
+        </form>
+
+        <!-- Lista de Compromissos -->
+        <h2>Compromissos Agendados</h2>
+        <div class="tabela-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compromisso</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-compromissos">
+                    <!-- Os compromissos vão aparecer aqui dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../java/comander.js"></script>
+</body>
+</html>
